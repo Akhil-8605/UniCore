@@ -1,0 +1,318 @@
+/* General Styles */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+}
+
+.auth-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.image-section,
+.form-section {
+  flex: 1;
+  position: relative;
+  transition: all 0.6s ease-in-out;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #ec008c,
+    #fc6767,
+    #fdd800,
+    #00ff6a,
+    #00c4ff,
+    #8446ff
+  );
+  background-size: 400% 400%; /* Enlarges gradient for smooth movement */
+  color: white;
+  padding: 40px;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.image-section .quote-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.image-section .quote-text {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.image-section .quote-subtitle {
+  font-size: 16px;
+  opacity: 0.8;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Form Section Styles */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+}
+
+.form-section .form-content {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-section .form-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-section .form-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.options label {
+  font-size: 14px;
+  color: #666;
+}
+
+.options .forgot-password {
+  font-size: 14px;
+  color: #ec008c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ec008c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #fc6767;
+}
+
+.divider {
+  margin: 20px 0;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.google-btn {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-btn .google-icon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.switch-auth {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.switch-auth span {
+  color: #ec008c;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Animations for Toggling Views */
+.auth-container.login-view .image-section.left {
+  order: 1;
+}
+
+.auth-container.login-view .form-section.right {
+  order: 2;
+}
+
+.auth-container.signup-view .image-section.right {
+  order: 2;
+}
+
+.auth-container.signup-view .form-section.left {
+  order: 1;
+}
+
+/* Smooth animation during transitions */
+.auth-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-section,
+.form-section {
+  flex: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.signup-view .image-section {
+  transform: translateX(100%);
+  opacity: 0.9;
+}
+
+.signup-view .form-section {
+  transform: translateX(-100%);
+  opacity: 0.9;
+}
+
+.login-view .image-section {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.login-view .form-section {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+/* Button Hover Effect */
+.primary-btn:hover {
+  background-color: #ec008c;
+  color: white;
+}
+
+.login-header-logo {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .image-section {
+    position: absolute;
+    height: 100vh;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .login-header-logo {
+    display: block;
+    width: 200px;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+  }
+
+  .form-section {
+    flex: 0.9;
+    margin: 0 auto;
+    border-radius: 19px;
+  }
+
+  .signup-view .image-section {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  .signup-view .form-section {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  .login-view .image-section {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  .login-view .form-section {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,126 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: linear-gradient(to right, #f7c948, #4a90e2);
+  color: white;
+  padding: 40px 60px;
+  position: relative;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-left .circle {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.footer-left span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-left p {
+  margin-top: 10px;
+}
+
+.footer-left .social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-left .social-links a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer-middle .links-group,
+.footer-right .links-group {
+  margin-bottom: 20px;
+}
+
+.links-group h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.links-group a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.links-group a:hover {
+  text-decoration: underline;
+}
+
+.cta {
+  margin-top: 20px;
+}
+
+.cta h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #f7c948;
+  border-radius: 50%;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #4a90e2;
+  border-radius: 50%;
+}

@@ -1,0 +1,102 @@
+import React from 'react'
+
+function Students() {
+  return (
+    <div style={{paddingTop: '8rem'}}>
+      Student Home page <br /><br/>
+      hgkjhvgv<br/>
+      hjgkj<br/>
+      vhkjvjhvhgv<br/>
+      jkvjvj<br/>
+      hbvkhvh<br/>
+      jhvgjhvhv<br/>
+      jhvgjhvhv<br/>
+      kjvhkjvjk<br/>
+      kjvhkjvjk<br/>
+      kjbhjgjk<br/>
+      hjgijhg<br/>
+      jhvigvgvivjgh<br/>
+      jhvigvgvivjgh<br/>
+      knbkjbhkjb<br/>
+      kjvhkjvjk<br/>
+      bkjbkjb<br/>
+      kjvkjvhkj<br/>
+      kjhkjvj<br/>
+      hgkjhvgv<br/>
+      hjgkj<br/>
+      vhkjvjhvhgv<br/>
+      jkvjvj<br/>
+      hbvkhvh<br/>
+      jhvgjhvhv<br/>
+      jhvgjhvhv<br/>
+      kjvhkjvjk<br/>
+      kjvhkjvjk<br/>
+      kjbhjgjk<br/>
+      hjgijhg<br/>
+      jhvigvgvivjgh<br/>
+      jhvigvgvivjgh<br/>
+      knbkjbhkjb<br/>
+      kjvhkjvjk<br/>
+      bkjbkjb<br/>
+      kjvkjvhkj<br/>
+      kjhkjvj<br/>
+      hgkjhvgv<br/>
+      hjgkj<br/>
+      vhkjvjhvhgv<br/>
+      jkvjvj<br/>
+      hbvkhvh<br/>
+      jhvgjhvhv<br/>
+      jhvgjhvhv<br/>
+      kjvhkjvjk<br/>
+      kjvhkjvjk<br/>
+      kjbhjgjk<br/>
+      hjgijhg<br/>
+      jhvigvgvivjgh<br/>
+      jhvigvgvivjgh<br/>
+      knbkjbhkjb<br/>
+      kjvhkjvjk<br/>
+      bkjbkjb<br/>
+      kjvkjvhkj<br/>
+      kjhkjvj<br/>
+      hgkjhvgv<br/>
+      hjgkj<br/>
+      vhkjvjhvhgv<br/>
+      jkvjvj<br/>
+      hbvkhvh<br/>
+      jhvgjhvhv<br/>
+      jhvgjhvhv<br/>
+      kjvhkjvjk<br/>
+      kjvhkjvjk<br/>
+      kjbhjgjk<br/>
+      hjgijhg<br/>
+      jhvigvgvivjgh<br/>
+      jhvigvgvivjgh<br/>
+      knbkjbhkjb<br/>
+      kjvhkjvjk<br/>
+      bkjbkjb<br/>
+      kjvkjvhkj<br/>
+      kjhkjvj<br/>
+      hgkjhvgv<br/>
+      hjgkj<br/>
+      vhkjvjhvhgv<br/>
+      jkvjvj<br/>
+      hbvkhvh<br/>
+      jhvgjhvhv<br/>
+      jhvgjhvhv<br/>
+      kjvhkjvjk<br/>
+      kjvhkjvjk<br/>
+      kjbhjgjk<br/>
+      hjgijhg<br/>
+      jhvigvgvivjgh<br/>
+      jhvigvgvivjgh<br/>
+      knbkjbhkjb<br/>
+      kjvhkjvjk<br/>
+      bkjbkjb<br/>
+      kjvkjvhkj<br/>
+      kjhkjvj<br/>
+
+    </div>
+  )
+}
+
+export default Students
