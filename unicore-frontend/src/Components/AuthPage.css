@@ -244,12 +244,12 @@
 
 .signup-view .image-section {
   transform: translateX(100%);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .signup-view .form-section {
   transform: translateX(-100%);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .login-view .image-section {

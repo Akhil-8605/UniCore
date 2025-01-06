@@ -1,4 +1,5 @@
 import React from 'react'
+import SlidingSection from '../../Components/SlidingSection'
 
 function Students() {
   return (

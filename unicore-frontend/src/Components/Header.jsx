@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css'; // Import the CSS file
 import logo from '../Images/unicore logo.png'; // Adjust the path as needed
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
                         <li><a href="#student-portal">Student Portal</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#contact">About us</a></li>
-                        <button className="login-btn">Log In</button>
+                        <Link to={'/login'}><button className="login-btn">Log In</button></Link>
                     </ul>
                 </nav>
                 {/* Mobile Menu Toggle */}

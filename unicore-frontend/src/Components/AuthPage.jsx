@@ -11,7 +11,6 @@ const AuthPage = () => {
             <div className="auth-container">
                 {/* Left Image Section */}
                 <div className="image-section">
-                    <img src={Logo} alt="" className="login-header-logo"/>
                     <div className="quote">
                         {isLogin ? (
                             <>
