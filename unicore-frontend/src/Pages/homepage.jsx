@@ -5,16 +5,19 @@ import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import OurRecruiters from "./homepage/OurRecruitersSection"
 import LoginNow from './homepage/LoginNowSection'
+import UpcomingEventsSection from './homepage/UpcomingEventsSection'
 
 function homepage() {
 
   return (
     <>
-      <Header />
+      {/* <Header setWhenAppears={700} setWhenDisappears={1996.800048828125}/> */}
+      <Header setWhenAppears={700} setWhenDisappears={0}/>
       <HeroSection />
+      <UpcomingEventsSection />
       <OurRecruiters/>
       <LoginNow />
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }

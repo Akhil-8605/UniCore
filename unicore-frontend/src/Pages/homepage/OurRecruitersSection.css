@@ -18,14 +18,14 @@
 }
 
 /* Logo Container and Rows */
-.logos-container {
+.recruiters-section-logos-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
 }
 
-.logo-row {
+.recruiters-section-logo-row {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -33,7 +33,7 @@
   margin-bottom: 20px;
 }
 
-.logo-row img {
+.recruiters-section-logo-row img {
   max-width: 120px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -47,22 +47,22 @@
 }
 
 /* Box Shadows and Hover Effects */
-.logo-row img {
+.recruiters-section-logo-row img {
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-.logo-row img.active {
+.recruiters-section-logo-row img.active {
   transform: scale(1.25);
   filter: brightness(1.2);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.logo-row img:hover {
+.recruiters-section-logo-row img:hover {
   cursor: pointer;
   filter: brightness(1.2);
 }
 
-.active-img-company-details {
+.recruiters-section-active-img-company-details {
   margin-top: -20px;
   text-align: center;
   padding: 20px;
@@ -78,14 +78,14 @@
   }
 }
 
-.active-img-company-details h3 {
+.recruiters-section-active-img-company-details h3 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
   color: #333;
 }
 
-.active-img-company-details p {
+.recruiters-section-active-img-company-details p {
   font-size: 16px;
   color: #555;
 }
@@ -96,11 +96,11 @@
   .recruiters-section {
     max-width: 80%;
   }
-  .logo-row img {
+  .recruiters-section-logo-row img {
     max-width: 100px;
   }
 
-  .logo-row {
+  .recruiters-section-logo-row {
     justify-content: space-evenly;
   }
 }
@@ -109,22 +109,22 @@
   .recruiters-section {
     max-width: 80%;
   }
-  .logo-row img {
+  .recruiters-section-logo-row img {
     max-width: 80px;
   }
 
-  .logo-row {
+  .recruiters-section-logo-row {
     justify-content: space-between;
     gap: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .logo-row img {
+  .recruiters-section-logo-row img {
     max-width: 70px;
   }
 
-  .logo-row {
+  .recruiters-section-logo-row {
     justify-content: space-between;
     gap: 10px;
   }

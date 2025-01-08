@@ -97,10 +97,10 @@ const RecruitersSection = () => {
 
     return (
         <>
-            <SlidingSection text={"Our Recruiters & MOU's"} />
+            <SlidingSection text={"Our Recruiters"} />
             <section className="recruiters-section">
-                <div className="logos-container">
-                    <div className="logo-row">
+                <div className="recruiters-section-logos-container">
+                    <div className="recruiters-section-logo-row">
                         {images.map((image, index) => (
                             <img
                                 key={index}
@@ -112,7 +112,7 @@ const RecruitersSection = () => {
                             />
                         ))}
                     </div>
-                    <div className="active-img-company-details">
+                    <div className="recruiters-section-active-img-company-details">
                         <h3>{images[currentImageIndex].name}</h3>
                         <p>{images[currentImageIndex].description}</p>
                     </div>

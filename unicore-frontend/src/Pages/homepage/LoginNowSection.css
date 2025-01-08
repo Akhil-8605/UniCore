@@ -101,43 +101,40 @@
 @media (max-width: 992px) {
   .log-in-now {
     max-width: 95%;
+    height: 28vh;
   }
 
   .log-in-now-data{
     flex: 1;
+    overflow: visible;
+    min-width: 50%;
   }
 
   .log-in-now-data h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .log-in-now .log-in-now-section1 {
-    display: none;
-    flex: 0.15;
+    flex: 0.25;
   }
 
   .log-in-now .log-in-now-section2 {
-    display: none;
-    flex: 0.125;
+    flex: 0.25;
   }
 
   .log-in-now .log-in-now-section3 {
-    display: none;
-    flex: 0.125;
+    flex: 0.25;
   }
 
   .log-in-now .log-in-now-section4 {
-    display: none;
-    flex: 0.125;
+    flex: 0.25;
   }
 
   .log-in-now .log-in-now-section5 {
-    display: none;
-    flex: 0.125;
+    flex: 0.25;
   }
 
   .log-in-now .log-in-now-section6 {
-    display: none;
-    flex: 0.15;
+    flex: 0.25;
   }
 }

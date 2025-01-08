@@ -11,7 +11,7 @@ function LoginNow() {
                 <div className='log-in-now-section3'></div>
                 <div className='log-in-now-data'>
                     <h1>Login Now To Access All Features Of Website</h1>
-                    <Link to={'/login'}><button className="login-btn">Click Here to Log In</button></Link>
+                    <a href={'/login'}><button className="header-section-login-btn">Click Here to Log In</button></a>
                 </div>
                 <div className='log-in-now-section4'></div>
                 <div className='log-in-now-section5'></div>
