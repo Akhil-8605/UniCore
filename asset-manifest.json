@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/unicore-demo/static/css/main.9238e5e1.css",
+    "main.js": "/unicore-demo/static/js/main.9d8e1744.js",
+    "static/js/488.a23e5532.chunk.js": "/unicore-demo/static/js/488.a23e5532.chunk.js",
+    "static/media/google logo.png": "/unicore-demo/static/media/google logo.7be3af0b18ab7ea5917d.png",
+    "static/media/Our Recruiters img2.jpg": "/unicore-demo/static/media/Our Recruiters img2.d084cd9bf48d03f2020d.jpg",
+    "static/media/Our Recruiters img1.jpg": "/unicore-demo/static/media/Our Recruiters img1.ceb766b977c6968c199e.jpg",
+    "static/media/unicore logo.png": "/unicore-demo/static/media/unicore logo.f332985225f55de7b2c4.png",
+    "static/media/unicore logo white.png": "/unicore-demo/static/media/unicore logo white.068efa26a8794ac06a4d.png",
+    "static/media/Our Recruiters img10.jpg": "/unicore-demo/static/media/Our Recruiters img10.a5d3329f0181e83a5751.jpg",
+    "static/media/Our Recruiters img11.jpg": "/unicore-demo/static/media/Our Recruiters img11.60a26913bdc47f375874.jpg",
+    "static/media/Our Recruiters img8.jpg": "/unicore-demo/static/media/Our Recruiters img8.1badee5efb2abbc98f9e.jpg",
+    "index.html": "/unicore-demo/index.html",
+    "main.9238e5e1.css.map": "/unicore-demo/static/css/main.9238e5e1.css.map",
+    "main.9d8e1744.js.map": "/unicore-demo/static/js/main.9d8e1744.js.map",
+    "488.a23e5532.chunk.js.map": "/unicore-demo/static/js/488.a23e5532.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9238e5e1.css",
+    "static/js/main.9d8e1744.js"
+  ]
+}
