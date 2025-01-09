@@ -22,6 +22,24 @@
   border-radius: 19px;
 }
 
+.header-section-navbar.scrolled.main-header {
+  position: absolute;
+  background-color: #ffffff;
+  color: #007bff;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  top: 0;
+  width: 100%;
+  border-radius: 0;
+  transition: all 0.5s ease;
+}
+
+.header-section-navbar.scrolled.main-header:hover{
+  top: 5px;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 19px;
+}
+
 .header-section-navbar-container {
   max-width: 1200px;
   margin: 0 auto;

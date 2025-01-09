@@ -4,7 +4,6 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  margin-top: -8rem;
 }
 
 .events-section-events-section::before {
@@ -339,7 +338,7 @@
 }
 
 @media (max-width: 640px) {
-  .events-section-events-section {
+  .events-section {
     padding: 1.5rem 1rem;
   }
 

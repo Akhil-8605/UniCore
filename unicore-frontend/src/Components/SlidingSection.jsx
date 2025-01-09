@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./SlidingSection.css";
 
 const SlidingSection = ({ text }) => {
-    const texts = Array(15).fill(text);
+    const texts = Array(50).fill(text);
 
     const slidingRowRef = useRef(null);
     const [isScrolling, setIsScrolling] = useState(false);
