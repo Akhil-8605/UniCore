@@ -11,7 +11,7 @@ import AcademicCalendar from "./Pages/AcademicCalendarPage";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/unicore-demo">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<AuthPage />} />
