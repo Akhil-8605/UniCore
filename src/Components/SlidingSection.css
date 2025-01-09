@@ -1,0 +1,46 @@
+/* Section Container */
+.sliding-section {
+  position: relative;
+  height: 10vh;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text Row */
+.sliding-row {
+  display: flex;
+  white-space: nowrap;
+  gap: 4rem;
+  --translate-x: 0px; /* Default custom property for translation */
+  transform: translateX(var(--translate-x));
+  will-change: transform;
+  transition: all 0.1s linear; /* Smooth transition */
+}
+
+/* Text Items */
+.sliding-text {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 1.5px;
+}
+
+/* Continuous Idle Animation */
+@keyframes idle-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 992px) {
+  .sliding-text {
+    font-size: 2.5rem;
+  }
+}

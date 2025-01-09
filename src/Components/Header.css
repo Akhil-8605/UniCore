@@ -1,0 +1,282 @@
+/* Header.css */
+
+/* Base Navbar Styles */
+.header-section-navbar {
+  width: 80%;
+  position: absolute;
+  margin: 0 auto;
+  top: 20px;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.header-section-navbar.scrolled {
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  top: 25px;
+  width: 80%;
+  border-radius: 19px;
+}
+
+.header-section-navbar.scrolled.main-header {
+  position: absolute;
+  background-color: #ffffff;
+  color: #007bff;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  top: 0;
+  width: 100%;
+  border-radius: 0;
+  transition: all 0.5s ease;
+}
+
+.header-section-navbar.scrolled.main-header:hover{
+  top: 5px;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 19px;
+}
+
+.header-section-navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logo img {
+  width: 180px;
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+.header-section-navbar.scrolled .logo-text {
+  color: #007bff;
+}
+
+/* Navigation Items */
+
+.header-section-nav-items {
+  list-style: none;
+  display: flex;
+  gap: 0 25px;
+  align-items: center;
+}
+
+.header-section-nav-items li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-section-nav-items li a:hover {
+  color: #007bff;
+}
+
+.header-section-navbar.scrolled .header-section-nav-items li a {
+  color: #007bff;
+}
+
+.header-section-navbar.scrolled .header-section-nav-items li a:hover {
+  color: #0056b3;
+}
+
+/* Action Buttons */
+.header-section-actions {
+  gap: 15px;
+}
+
+.header-section-login-btn,
+.header-section-signup-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-section-login-btn {
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.header-section-login-btn.active {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.header-section-login-btn.active:hover {
+  background-color: #ffffff;
+  color: #007bff;
+}
+
+.header-section-login-btn:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.header-section-signup-btn {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.header-section-signup-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile Menu Toggle */
+.header-section-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.header-section-menu-toggle .header-section-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.header-section-navbar.scrolled
+  .header-section-menu-toggle
+  .header-section-bar {
+  background-color: #007bff;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1300px) {
+  .header-section-navbar {
+    width: 90%;
+  }
+
+  .header-section-navbar.scrolled {
+    width: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-section-nav {
+    display: none;
+  }
+
+  .header-section-navbar-container {
+    padding-left: 0.8rem;
+  }
+
+  .header-section-actions {
+    display: none;
+  }
+
+  .header-section-menu-toggle {
+    display: flex;
+  }
+
+  /* Mobile Menu Styles */
+  .header-section-navbar {
+    width: 100%;
+  }
+
+  .header-section-navbar.scrolled {
+    width: 95%;
+  }
+
+  .header-section-nav-items li a {
+    color: #333333;
+  }
+
+  .header-section-navbar.active .header-section-menu-toggle {
+    color: #fff;
+  }
+
+  .header-section-navbar.active .header-section-nav {
+    display: block;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    transition: all 1s ease;
+  }
+
+  .header-section-navbar.scrolled.active .header-section-nav {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 29px;
+    border-bottom-left-radius: 29px;
+    transition: all 1s ease;
+  }
+
+  .header-section-navbar.active .header-section-nav-items {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom-right-radius: 9px;
+  }
+
+  .header-section-navbar.active .header-section-nav-items li {
+    margin: 10px 0;
+  }
+
+  .header-section-navbar.active .header-section-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+
+  .header-section-navbar.active
+    .header-section-menu-toggle
+    .header-section-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header-section-navbar.active
+    .header-section-menu-toggle
+    .header-section-bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    width: 35px;
+  }
+
+  .header-section-navbar.active
+    .header-section-menu-toggle
+    .header-section-bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+    width: 35px;
+  }
+}
