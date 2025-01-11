@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/unicore-demo/static/css/main.9238e5e1.css",
-    "main.js": "/unicore-demo/static/js/main.eb2e487e.js",
+    "main.js": "/unicore-demo/static/js/main.e8010f9d.js",
     "static/js/488.a23e5532.chunk.js": "/unicore-demo/static/js/488.a23e5532.chunk.js",
     "static/media/google logo.png": "/unicore-demo/static/media/google logo.7be3af0b18ab7ea5917d.png",
     "static/media/Our Recruiters img2.jpg": "/unicore-demo/static/media/Our Recruiters img2.d084cd9bf48d03f2020d.jpg",
@@ -13,11 +13,11 @@
     "static/media/Our Recruiters img8.jpg": "/unicore-demo/static/media/Our Recruiters img8.1badee5efb2abbc98f9e.jpg",
     "index.html": "/unicore-demo/index.html",
     "main.9238e5e1.css.map": "/unicore-demo/static/css/main.9238e5e1.css.map",
-    "main.eb2e487e.js.map": "/unicore-demo/static/js/main.eb2e487e.js.map",
+    "main.e8010f9d.js.map": "/unicore-demo/static/js/main.e8010f9d.js.map",
     "488.a23e5532.chunk.js.map": "/unicore-demo/static/js/488.a23e5532.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9238e5e1.css",
-    "static/js/main.eb2e487e.js"
+    "static/js/main.e8010f9d.js"
   ]
 }
