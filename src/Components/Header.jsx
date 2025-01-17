@@ -48,7 +48,7 @@ const Header = ({setWhenAppears , setWhenDisappears}) => {
                     <ul className="header-section-nav-items">
                         <li><a href="/">Home</a></li>
                         <li><a href="#departments">Departments</a></li>
-                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="/admissions">Admissions</a></li>
                         <li><a href="#events">Events</a></li>
                         <li><a href="#student-portal">Student Portal</a></li>
                         <li><a href="/contact">Contact</a></li>

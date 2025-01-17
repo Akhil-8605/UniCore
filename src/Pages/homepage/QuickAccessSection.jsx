@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { BookOpen, Calendar, FileText, GraduationCap, Users, Library, Mail, Clock, ChevronRight, BarChart2, BookMarked, UserCheck } from 'lucide-react';
+import { BookOpen, Calendar, FileText, GraduationCap, Users, Library, Mail, Clock, ChevronRight, BarChart2, BookMarked, UserCheck, icons } from 'lucide-react';
 import './QuickAccessSection.css';
 
 const stats = [
@@ -13,10 +13,16 @@ const stats = [
 
 const quickLinks = [
     {
-        title: 'Course Registration',
-        icon: BookMarked,
-        description: 'Register for new courses or view current enrollment',
+        title: 'Student Portal',
+        icon: UserCheck,
+        description: 'View grades, attendance, and academic progress',
         link: '#'
+    },
+    {
+        title: 'Academics',
+        icon: BookOpen,
+        description: 'Explore academic programs, and resources for your studies',
+        link: '/academics'
     },
     {
         title: 'Library Resources',
@@ -24,17 +30,18 @@ const quickLinks = [
         description: 'Access digital library and research materials',
         link: '/library'
     },
-    {
-        title: 'Student Portal',
-        icon: UserCheck,
-        description: 'View grades, attendance, and academic progress',
-        link: '#'
-    },
+
     {
         title: 'Academic Calendar',
         icon: Calendar,
         description: 'Important dates and academic schedule',
-        link: '/acedamic-calendar'
+        link: '/academic-calendar'
+    },
+    {
+        title: 'Class Schedule',
+        icon: Clock,
+        description: 'View and manage your daily class schedule',
+        link: '#'
     },
     {
         title: 'Email Services',
@@ -42,12 +49,6 @@ const quickLinks = [
         description: 'Access university email and communications',
         link: '#'
     },
-    {
-        title: 'Class Schedule',
-        icon: Clock,
-        description: 'View and manage your daily class schedule',
-        link: '#'
-    }
 ];
 
 function QuickAccess() {
