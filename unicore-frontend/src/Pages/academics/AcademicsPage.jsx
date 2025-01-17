@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Download, FileText, GraduationCap, Calendar, Book, Award, Shield, FileCheck, FileSpreadsheet } from 'lucide-react';
+import { Menu, X, Download, FileText, GraduationCap, Calendar, Book, Award, Shield, FileCheck, FileSpreadsheet, LogOut } from 'lucide-react';
 import './AcademicsPage.css';
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer';
@@ -54,6 +54,9 @@ export default function Academics() {
                     <a href="#policy" onClick={() => setIsMenuOpen(false)}>
                         <FileSpreadsheet className="academics-page-nav-icon" />
                         <span>Policy Manual</span>
+                    </a>
+                    <a href="/" onClick={() => setIsMenuOpen(false)}>
+                        <LogOut className="academics-page-nav-icon"/> Back to Home
                     </a>
                 </nav>
             </div>

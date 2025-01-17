@@ -21,27 +21,27 @@ const AuthPage = () => {
         e.preventDefault();
 
         // Example login logic for multiple students and faculty
-        if (username === "student1" && password === "student@1") {
+        if (username === "student1" && password === "student1") {
             login("student1", "student");
             navigate("/");
-        } else if (username === "student2" && password === "student@2") {
+        } else if (username === "student2" && password === "student2") {
             login("student2", "student");
             navigate("/");
-        } else if (username === "student3" && password === "student@3") {
+        } else if (username === "student3" && password === "student3") {
             login("student3", "student");
             navigate("/");
-        } else if (username === "admin" && password === "admin@1") {
+        } else if (username === "admin" && password === "admin1") {
             login("admin", "admin");
             navigate("/admin-library");
-        } else if (username === "faculty1" && password === "faculty@1") {
+        } else if (username === "faculty1" && password === "faculty1") {
             login("faculty1", "faculty");
-            navigate("/faculty-dashboard");
-        } else if (username === "faculty2" && password === "faculty@2") {
+            navigate("/");
+        } else if (username === "faculty2" && password === "faculty2") {
             login("faculty2", "faculty");
-            navigate("/faculty-dashboard");
-        } else if (username === "faculty3" && password === "faculty@3") {
+            navigate("/");
+        } else if (username === "faculty3" && password === "faculty3") {
             login("faculty3", "faculty");
-            navigate("/faculty-dashboard");
+            navigate("/");
         } else {
             setModalMessage("Invalid credentials. Please try again.");
             setShowModal(true);

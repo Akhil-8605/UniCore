@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import {GraduationCap, FileText, BookOpen, Gavel, DollarSign, CheckCircle, Award, Home, Menu, X ,StepForward, LogOut, ClipboardCheck, IndianRupee, Scale} from 'lucide-react';
 import MainHeader from "../Components/MainHeader"
 import './AdmissionsPage.css';
 import Mech from '../Images/mechanical engg.png'
@@ -182,15 +182,34 @@ export default function ModernAdmissions() {
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
-                <nav className={`admissions-page-nav-menu ${isMenuOpen ? 'open' : ''}`}>
-                    <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a>
-                    <a href="#procedure" onClick={() => setIsMenuOpen(false)}>Procedure</a>
-                    <a href="#brochure" onClick={() => setIsMenuOpen(false)}>Brochure</a>
-                    <a href="#guidelines" onClick={() => setIsMenuOpen(false)}>Guidelines</a>
-                    <a href="#rules" onClick={() => setIsMenuOpen(false)}>Rules</a>
-                    <a href="#fees" onClick={() => setIsMenuOpen(false)}>Fees</a>
-                    <a href="#eligibility" onClick={() => setIsMenuOpen(false)}>Eligibility</a>
-                    <a href="#scholarship" onClick={() => setIsMenuOpen(false)}>Scholarship</a>
+                <nav className={`academics-page-nav-menu ${isMenuOpen ? 'open' : ''}`}>
+                    <a href="#courses" onClick={() => setIsMenuOpen(false)}>
+                        <GraduationCap className="academics-page-nav-icon"/> Our Diploma Programs
+                    </a>
+                    <a href="#procedure" onClick={() => setIsMenuOpen(false)}>
+                        <ClipboardCheck className="academics-page-nav-icon"/> Admission Procedure
+                    </a>
+                    <a href="#brochure" onClick={() => setIsMenuOpen(false)}>
+                        <FileText className="academics-page-nav-icon"/> Information Brochure
+                    </a>
+                    <a href="#guidelines" onClick={() => setIsMenuOpen(false)}>
+                        <BookOpen className="academics-page-nav-icon"/> Student Guidelines
+                    </a>
+                    <a href="#rules" onClick={() => setIsMenuOpen(false)}>
+                        <Scale className="academics-page-nav-icon"/> Institute Rules & Policies
+                    </a>
+                    <a href="#fees" onClick={() => setIsMenuOpen(false)}>
+                        <IndianRupee className="academics-page-nav-icon"/> Fees Structure
+                    </a>
+                    <a href="#eligibility" onClick={() => setIsMenuOpen(false)}>
+                        <CheckCircle className="academics-page-nav-icon"/> Admission Eligibility
+                    </a>
+                    <a href="#scholarship" onClick={() => setIsMenuOpen(false)}>
+                        <Award className="academics-page-nav-icon"/> Scholarship
+                    </a>
+                    <a href="/" onClick={() => setIsMenuOpen(false)}>
+                        <LogOut className="academics-page-nav-icon"/> Back to Home
+                    </a>
                 </nav>
             </div>
 
@@ -434,7 +453,7 @@ export default function ModernAdmissions() {
                     </div>
                 </section>
             </main>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
