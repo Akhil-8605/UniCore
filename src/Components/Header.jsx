@@ -7,8 +7,13 @@ import { Link } from 'react-router-dom';
 const Header = ({setWhenAppears , setWhenDisappears}) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
+        // Check if the user is logged in on component mount
+        const user = localStorage.getItem('user');
+        setIsLoggedIn(!!user);
+
         // Function to handle scroll event
         const handleScroll = () => {
             if (window.scrollY > setWhenAppears ) {
@@ -29,10 +34,18 @@ const Header = ({setWhenAppears , setWhenDisappears}) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [setWhenAppears, setWhenDisappears]);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleLogout = () => {
+        // Clear only the login-related data
+        localStorage.removeItem('user'); // Example key for user info
+        localStorage.removeItem('authToken'); // Example key for auth token
+        setIsLoggedIn(false);
+        window.location.href = '/'; // Redirect to login page
     };
 
     return (
@@ -53,7 +66,22 @@ const Header = ({setWhenAppears , setWhenDisappears}) => {
                         <li><a href="#student-portal">Student Portal</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="#about-us">About us</a></li>
-                        <Link to={'/login'}><button className={`header-section-login-btn ${isScrolled? '': 'active'}`}>Log In</button></Link>
+                        {isLoggedIn ? (
+                            <button 
+                                onClick={handleLogout} 
+                                className={`header-section-logout-btn ${isScrolled ? '' : 'active'}`}
+                            >
+                                Log Out
+                            </button>
+                        ) : (
+                            <Link to={'/login'}>
+                                <button 
+                                    className={`header-section-login-btn ${isScrolled ? '' : 'active'}`}
+                                >
+                                    Log In
+                                </button>
+                            </Link>
+                        )}
                     </ul>
                 </nav>
 

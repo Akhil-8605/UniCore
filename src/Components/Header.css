@@ -108,6 +108,7 @@
 }
 
 .header-section-login-btn,
+.header-section-logout-btn,
 .header-section-signup-btn {
   padding: 8px 16px;
   border: none;
@@ -145,6 +146,16 @@
 
 .header-section-signup-btn:hover {
   background-color: #0056b3;
+}
+
+.header-section-logout-btn {
+  background-color: #ffffff;
+  color: #007bff;
+}
+
+.header-section-logout-btn:hover {
+  background-color: #007bff;
+  color: #ffffff;
 }
 
 /* Mobile Menu Toggle */

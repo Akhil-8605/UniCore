@@ -168,7 +168,7 @@ export default function ClassTestResults() {
 
     const openPdf = (url, title = 'Document Preview') => {
         const previewUrl = `/academic-preview?pdf=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
-        window.open(previewUrl, '_blank');
+        window.open(url, '_blank');
     };
 
     const filteredResults =
@@ -200,41 +200,40 @@ export default function ClassTestResults() {
     return (
         <div className="class-test-results-page">
             {/* Header */}
-            <header className="page-header">
-                <div className="header-content">
-                    <Link to="/academics" className="back-button">
-                        <ArrowLeft className="button-icon" />
-                        Back to Academics
+            <header className="results-page-page-header">
+                <div className="results-page-header-content">
+                    <Link to="/academics" className="results-page-back-button">
+                        <ArrowLeft className="results-page-button-icon" />
                     </Link>
                     <h1>Class Test Results</h1>
                 </div>
             </header>
 
-            <main className="main-content">
+            <main className="results-page-main-content">
                 {/* Search and Filters */}
-                <div className="search-filters-section">
-                    <div className="search-box">
-                        <Search className="search-icon" />
+                <div className="results-page-search-filters-section">
+                    <div className="results-page-search-box">
+                        <Search className="results-page-search-icon" />
                         <input
                             type="text"
                             placeholder="Search by subject name or code..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
-                        <button className="filter-toggle" onClick={() => setShowFilters(!showFilters)}>
-                            <Filter className="button-icon" />
+                        <button className="results-page-filter-toggle" onClick={() => setShowFilters(!showFilters)}>
+                            <Filter className="results-page-button-icon" />
                             Filters
-                            <ChevronDown className={`button-icon ${showFilters ? 'rotate' : ''}`} />
+                            <ChevronDown className={`results-page-button-icon ${showFilters ? 'rotate' : ''}`} />
                         </button>
                     </div>
 
                     {showFilters && (
-                        <div className="filters-panel">
-                            <div className="filter-controls">
+                        <div className="results-page-filters-panel">
+                            <div className="results-page-filter-controls">
                                 {/* Performance Chart Toggle Button */}
                                 {selectedDepartment && selectedSemester && selectedTest && filteredResults?.length > 0 && (
-                                        <div className="chart-toggle-section">
-                                            <button className={`toggle-button ${showChart ? 'active': ''}`} onClick={() => setShowChart(!showChart)}>
+                                        <div className="results-page-chart-toggle-section">
+                                            <button className={`results-page-toggle-button ${showChart ? 'active': ''}`} onClick={() => setShowChart(!showChart)}>
                                                 {showChart ? 'Hide Comparison' : 'View Comparison'}
                                             </button>
                                         </div>
@@ -243,7 +242,7 @@ export default function ClassTestResults() {
                                 <select
                                     value={selectedDepartment}
                                     onChange={(e) => setSelectedDepartment(e.target.value)}
-                                    className="filter-select"
+                                    className="results-page-filter-select"
                                 >
                                     <option value="">Select Department</option>
                                     {departments.map((dept) => (
@@ -256,7 +255,7 @@ export default function ClassTestResults() {
                                 <select
                                     value={selectedSemester}
                                     onChange={(e) => setSelectedSemester(e.target.value)}
-                                    className="filter-select"
+                                    className="results-page-filter-select"
                                     disabled={!selectedDepartment}
                                 >
                                     <option value="">Select Semester</option>
@@ -267,15 +266,15 @@ export default function ClassTestResults() {
                                     ))}
                                 </select>
 
-                                <div className="test-toggle">
+                                <div className="results-page-test-toggle">
                                     <button
-                                        className={`toggle-button ${selectedTest === 'ct1' ? 'active' : ''}`}
+                                        className={`results-page-toggle-button ${selectedTest === 'ct1' ? 'active' : ''}`}
                                         onClick={() => setSelectedTest('ct1')}
                                     >
                                         Class Test 1
                                     </button>
                                     <button
-                                        className={`toggle-button ${selectedTest === 'ct2' ? 'active' : ''}`}
+                                        className={`results-page-toggle-button ${selectedTest === 'ct2' ? 'active' : ''}`}
                                         onClick={() => setSelectedTest('ct2')}
                                     >
                                         Class Test 2
@@ -289,12 +288,12 @@ export default function ClassTestResults() {
 
                 {/* Performance Chart */}
                 {showChart && selectedDepartment && selectedSemester && selectedTest && filteredResults?.length > 0 && (
-                    <div className="performance-chart-section">
+                    <div className="results-page-performance-chart-section">
                         <h2>
-                            <BarChart2 className="section-icon" />
+                            <BarChart2 className="results-page-section-icon" />
                             Subject Performance Comparison
                         </h2>
-                        <div className="chart-container">
+                        <div className="results-page-chart-container">
                             <ResponsiveContainer width="100%" height={300}>
                                 <BarChart data={getSubjectPerformanceData(selectedDepartment, selectedSemester, selectedTest)}>
                                     <CartesianGrid strokeDasharray="3 3" />
@@ -318,32 +317,32 @@ export default function ClassTestResults() {
                 )}
 
                 {/* Results Grid */}
-                <div className="results-grid">
+                <div className="results-page-results-grid">
                     {filteredResults?.map((result) => (
-                        <div key={result.subjectCode} className="result-card">
-                            <div className="result-header">
+                        <div key={result.subjectCode} className="results-page-result-card">
+                            <div className="results-page-result-header">
                                 <h3>{result.subject}</h3>
-                                <span className="subject-code">{result.subjectCode}</span>
+                                <span className="results-page-subject-code">{result.subjectCode}</span>
                             </div>
-                            <div className="result-stats">
-                                <div className="stat-item">
-                                    <span className="stat-label">Class Average</span>
-                                    <span className="stat-value">{result.classAverage}</span>
+                            <div className="results-page-result-stats">
+                                <div className="results-page-stat-item">
+                                    <span className="results-page-stat-label">Class Average</span>
+                                    <span className="results-page-stat-value">{result.classAverage}</span>
                                 </div>
-                                <div className="stat-item">
-                                    <span className="stat-label">Highest Marks</span>
-                                    <span className="stat-value">{result.highestMarks}</span>
+                                <div className="results-page-stat-item">
+                                    <span className="results-page-stat-label">Highest Marks</span>
+                                    <span className="results-page-stat-value">{result.highestMarks}</span>
                                 </div>
                             </div>
-                            <div className="teacher-section">
-                                <div className="teacher-info">
-                                    <GraduationCap className="teacher-icon" />
+                            <div className="results-page-teacher-section">
+                                <div className="results-page-teacher-info">
+                                    <GraduationCap className="results-page-teacher-icon" />
                                     <span>{result.teacher}</span>
                                 </div>
-                                <div className="feedback-section">
+                                <div className="results-page-feedback-section">
                                     <h4>Teacher's Feedback</h4>
-                                    <div className="feedback-content">
-                                        <div className="feedback-category">
+                                    <div className="results-page-feedback-content">
+                                        <div className="results-page-feedback-category">
                                             <h5>Suggestions for Improvement</h5>
                                             <ul>
                                                 {result.teacherFeedback.suggestions.map((suggestion, index) => (
@@ -355,12 +354,12 @@ export default function ClassTestResults() {
                                 </div>
                             </div>
                             <button
-                                className="download-button"
+                                className="results-page-download-button"
                                 onClick={() =>
                                     openPdf(result.pdfUrl, `${result.subject} - ${selectedTest.toUpperCase()} Result`)
                                 }
                             >
-                                <Download className="button-icon" />
+                                <Download className="results-page-button-icon" />
                                 Download Result
                             </button>
                         </div>
@@ -369,7 +368,7 @@ export default function ClassTestResults() {
 
                 {/* Empty State */}
                 {selectedDepartment && (!filteredResults || filteredResults.length === 0) && (
-                    <div className="empty-state">
+                    <div className="results-page-empty-state">
                         <h2>No results found</h2>
                         <p>Try adjusting your filters or search query</p>
                     </div>

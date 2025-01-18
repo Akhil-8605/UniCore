@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import { ArrowLeft, Download, Search, Filter, ChevronDown, BarChart2, Book, History } from 'lucide-react'
 import {Link} from 'react-router-dom'
@@ -122,13 +120,12 @@ export default function QuestionPapers() {
   // }, [])
 
   const openPdf = (paper) => {
-    const previewUrl = `/academic-preview?pdf=${encodeURIComponent(paper.url)}&title=${encodeURIComponent(paper.title)}`
-    window.open(previewUrl, '_blank')
+    window.open(paper, '_blank')
     
     // Update download history
-    const updatedHistory = [paper, ...downloadHistory.filter(p => p.id !== paper.id)].slice(0, 10)
-    setDownloadHistory(updatedHistory)
-    localStorage.setItem('downloadHistory', JSON.stringify(updatedHistory))
+    // const updatedHistory = [paper, ...downloadHistory.filter(p => p.id !== paper.id)].slice(0, 10)
+    // setDownloadHistory(updatedHistory)
+    // localStorage.setItem('downloadHistory', JSON.stringify(updatedHistory))
   }
 
   const filteredSubjects = selectedDepartment && selectedSemester
@@ -155,21 +152,20 @@ export default function QuestionPapers() {
   return (
     <div className="question-papers-page">
       {/* Header */}
-      <header className="page-header">
-        <div className="header-content">
-          <Link to="/academics" className="back-button">
-            <ArrowLeft className="button-icon" />
-            Back to Academics
+      <header className="question-papers-page-header">
+        <div className="question-papers-header-content">
+          <Link to="/academics" className="question-papers-back-button">
+            <ArrowLeft className="question-papers-button-icon" />
           </Link>
-          <h1>Question Papers Archive</h1>
+          <h1>Question Papers</h1>
         </div>
       </header>
 
-      <main className="main-content">
+      <main className="question-papers-main-content">
         {/* Search and Filters */}
-        <div className="search-filters-section">
-          <div className="search-box">
-            <Search className="search-icon" />
+        <div className="question-papers-search-filters-section">
+          <div className="question-papers-search-box">
+            <Search className="question-papers-search-icon" />
             <input
               type="text"
               placeholder="Search by subject name or code..."
@@ -177,22 +173,22 @@ export default function QuestionPapers() {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button 
-              className="filter-toggle"
+              className="question-papers-filter-toggle"
               onClick={() => setShowFilters(!showFilters)}
             >
-              <Filter className="button-icon" />
+              <Filter className="question-papers-button-icon" />
               Filters
-              <ChevronDown className={`button-icon ${showFilters ? 'rotate' : ''}`} />
+              <ChevronDown className={`question-papers-button-icon ${showFilters ? 'rotate' : ''}`} />
             </button>
           </div>
 
           {showFilters && (
-            <div className="filters-panel">
-              <div className="filter-controls">
+            <div className="question-papers-filters-panel">
+              <div className="question-papers-filter-controls">
                 <select 
                   value={selectedDepartment} 
                   onChange={(e) => setSelectedDepartment(e.target.value)}
-                  className="filter-select"
+                  className="question-papers-filter-select"
                 >
                   <option value="">Select Department</option>
                   {departments.map(dept => (
@@ -203,7 +199,7 @@ export default function QuestionPapers() {
                 <select 
                   value={selectedSemester} 
                   onChange={(e) => setSelectedSemester(e.target.value)}
-                  className="filter-select"
+                  className="question-papers-filter-select"
                   disabled={!selectedDepartment}
                 >
                   <option value="">Select Semester</option>
@@ -215,7 +211,7 @@ export default function QuestionPapers() {
                 <select 
                   value={selectedYear} 
                   onChange={(e) => setSelectedYear(e.target.value)}
-                  className="filter-select"
+                  className="question-papers-filter-select"
                 >
                   <option value="">All Years</option>
                   {years.map(year => (
@@ -226,26 +222,26 @@ export default function QuestionPapers() {
                 <select 
                   value={sortBy} 
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="filter-select"
+                  className="question-papers-filter-select"
                 >
                   <option value="date">Sort by Date</option>
                   <option value="downloads">Sort by Downloads</option>
                 </select>
               </div>
 
-              <div className="view-toggle">
+              <div className="question-papers-view-toggle">
                 <button 
-                  className={`view-button ${viewMode === 'grid' ? 'active' : ''}`}
+                  className={`question-papers-view-button ${viewMode === 'grid' ? 'active' : ''}`}
                   onClick={() => setViewMode('grid')}
                 >
-                  <BarChart2 className="button-icon" />
+                  <BarChart2 className="question-papers-button-icon" />
                   Grid View
                 </button>
                 <button 
-                  className={`view-button ${viewMode === 'list' ? 'active' : ''}`}
+                  className={`question-papers-view-button ${viewMode === 'list' ? 'active' : ''}`}
                   onClick={() => setViewMode('list')}
                 >
-                  <Book className="button-icon" />
+                  <Book className="question-papers-button-icon" />
                   List View
                 </button>
               </div>
@@ -255,25 +251,25 @@ export default function QuestionPapers() {
 
         {/* Download History */}
         {downloadHistory.length > 0 && (
-          <div className="history-section">
+          <div className="question-papers-history-section">
             <h2>
-              <History className="section-icon" />
+              <History className="question-papers-section-icon" />
               Recent Downloads
             </h2>
-            <div className="history-list">
+            <div className="question-papers-history-list">
               {downloadHistory.map((paper) => (
-                <div key={paper.id} className="history-item">
-                  <div className="history-info">
+                <div key={paper.id} className="question-papers-history-item">
+                  <div className="question-papers-history-info">
                     <h3>{paper.title}</h3>
-                    <span className="history-meta">
+                    <span className="question-papers-history-meta">
                       Downloaded on {new Date(paper.lastDownloaded || '').toLocaleDateString()}
                     </span>
                   </div>
                   <button 
-                    className="download-button small"
+                    className="question-papers-download-button small"
                     onClick={() => openPdf(paper)}
                   >
-                    <Download className="button-icon" />
+                    <Download className="question-papers-button-icon" />
                   </button>
                 </div>
               ))}
@@ -282,32 +278,32 @@ export default function QuestionPapers() {
         )}
 
         {/* Papers Content */}
-        <div className={`papers-content ${viewMode}`}>
+        <div className={`question-papers-papers-content ${viewMode}`}>
           {filteredSubjects.map(subject => (
-            <div key={subject.id} className="subject-card">
-              <div className="subject-header">
+            <div key={subject.id} className="question-papers-subject-card">
+              <div className="question-papers-subject-header">
                 <h3>{subject.name}</h3>
-                <span className="subject-code">{subject.code}</span>
+                <span className="question-papers-subject-code">{subject.code}</span>
               </div>
-              <div className="papers-list">
+              <div className="question-papers-papers-list">
                 {getFilteredPapers(subject.papers).map((paper) => (
-                  <div key={paper.id} className="paper-item">
-                    <div className="paper-info">
+                  <div key={paper.id} className="question-papers-paper-item">
+                    <div className="question-papers-paper-info">
                       <h4>{paper.title}</h4>
-                      <div className="paper-meta">
-                        <span className="paper-type">{paper.type}</span>
-                        <span className="paper-year">{paper.year}</span>
-                        <span className="paper-downloads">
+                      <div className="question-papers-paper-meta">
+                        <span className="question-papers-paper-type">{paper.type}</span>
+                        <span className="question-papers-paper-year">{paper.year}</span>
+                        <span className="question-papers-paper-downloads">
                           {paper.downloadCount} downloads
                         </span>
-                        <span className="paper-size">{paper.fileSize}</span>
+                        <span className="question-papers-paper-size">{paper.fileSize}</span>
                       </div>
                     </div>
                     <button 
-                      className="download-button"
+                      className="question-papers-download-button"
                       onClick={() => openPdf(paper)}
                     >
-                      <Download className="button-icon" />
+                      <Download className="question-papers-button-icon" />
                       Download
                     </button>
                   </div>
@@ -319,8 +315,8 @@ export default function QuestionPapers() {
 
         {/* Empty State */}
         {selectedDepartment && selectedSemester && filteredSubjects.length === 0 && (
-          <div className="empty-state">
-            <Book className="empty-icon" />
+          <div className="question-papers-empty-state">
+            <Book className="question-papers-empty-icon" />
             <h2>No papers found</h2>
             <p>Try adjusting your filters or search query</p>
           </div>
