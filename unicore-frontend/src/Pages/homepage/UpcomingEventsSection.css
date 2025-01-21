@@ -308,8 +308,25 @@
 }
 
 @media (max-width: 768px) {
-  .events-section{  
-  margin-top: 0;
+  .events-section {
+    margin-top: 0;
+    min-height: fit-content;
+  }
+
+  .events-section-events-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    overflow-x: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem; /* Optional: Add padding to avoid content touching edges */
+    scrollbar-width: none;
+  }
+
+  .events-section-events-grid > * {
+    flex: 0 0 auto; /* Prevents flex items from shrinking or growing */
+    width: 75%; /* Ensures each item has a minimum width */
   }
 
   .events-section-events-header {
@@ -340,10 +357,6 @@
 @media (max-width: 640px) {
   .events-section {
     padding: 1.5rem 1rem;
-  }
-
-  .events-section-events-grid {
-    grid-template-columns: 1fr;
   }
 
   .events-section-live-time {
