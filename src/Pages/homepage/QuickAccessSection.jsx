@@ -22,20 +22,20 @@ const quickLinks = [
         title: 'Academics',
         icon: BookOpen,
         description: 'Explore academic programs, and resources for your studies',
-        link: '#/academics'
+        link: '/academics'
     },
     {
         title: 'Library Resources',
         icon: Library,
         description: 'Access digital library and research materials',
-        link: '#/library'
+        link: '/library'
     },
 
     {
         title: 'Academic Calendar',
         icon: Calendar,
         description: 'Important dates and academic schedule',
-        link: '#/academic-calendar'
+        link: '/academic-calendar'
     },
     {
         title: 'Class Schedule',
