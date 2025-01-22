@@ -20,7 +20,7 @@ const departments = [
                         highestMarks: 19,
                         date: "2023-12-15",
                         pdfUrl: "/pdfs/computer/sem1/ct1/english.pdf",
-                        teacher: "Prof. Sarah Johnson",
+                        teacher: "Mr. Jhadhav",
                         teacherFeedback: {
                             suggestions: [
                                 "Focus more on technical writing",
@@ -36,7 +36,7 @@ const departments = [
                         highestMarks: 18,
                         date: "2023-12-16",
                         pdfUrl: "/pdfs/computer/sem1/ct1/basic-mathematics.pdf",
-                        teacher: "Prof. Michael Smith",
+                        teacher: "Mrs. Dixit",
                         teacherFeedback: {
                             suggestions: [
                                 "More practice in trigonometry",
@@ -54,7 +54,7 @@ const departments = [
                         highestMarks: 20,
                         date: "2024-02-15",
                         pdfUrl: "/pdfs/computer/sem1/ct2/english.pdf",
-                        teacher: "Prof. Sarah Johnson",
+                        teacher: "Mr. Jhadhav",
                         teacherFeedback: {
                             suggestions: []
                         }
@@ -66,7 +66,7 @@ const departments = [
                         highestMarks: 19,
                         date: "2024-02-16",
                         pdfUrl: "/pdfs/computer/sem1/ct2/basic-mathematics.pdf",
-                        teacher: "Prof. Michael Smith",
+                        teacher: "Mrs. Dixit",
                         teacherFeedback: {
                             suggestions: [
                                 "Keep practicing complex problems"
@@ -84,7 +84,7 @@ const departments = [
                         highestMarks: 18,
                         date: "2023-12-18",
                         pdfUrl: "/pdfs/computer/sem2/ct1/programming-in-c.pdf",
-                        teacher: "Prof. Alan Turing",
+                        teacher: "Mr. Rashinkar",
                         teacherFeedback: {
                             suggestions: [
                                 "Practice more with pointers",
@@ -102,7 +102,7 @@ const departments = [
                         highestMarks: 19,
                         date: "2024-02-18",
                         pdfUrl: "/pdfs/computer/sem2/ct2/programming-in-c.pdf",
-                        teacher: "Prof. Alan Turing",
+                        teacher: "Mr. Rashinkar",
                         teacherFeedback: {
                             suggestions: [
                                 "Keep practicing different programming problems."
@@ -126,7 +126,7 @@ const departments = [
                         highestMarks: 18,
                         date: "2023-12-15",
                         pdfUrl: "/pdfs/electronics/sem1/ct1/basic-electronics.pdf",
-                        teacher: "Prof. Emily Watson",
+                        teacher: " ",
                         teacherFeedback: {
                             suggestions: [
                                 "Need more practice with circuit analysis."
@@ -142,7 +142,7 @@ const departments = [
                         highestMarks: 19,
                         date: "2024-02-15",
                         pdfUrl: "/pdfs/electronics/sem1/ct2/basic-electronics.pdf",
-                        teacher: "Prof. Emily Watson",
+                        teacher: " ",
                         teacherFeedback: {
                             suggestions: [
                                 "Keep practicing problem-solving."
