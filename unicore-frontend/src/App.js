@@ -43,7 +43,7 @@ function App() {
           </Route>
 
           <Route element={<PrivateRoute allowedRoles={["faculty"]} />}>
-            {/* <Route path="/faculty-dashboard" element={<FacultyDashboard />} /> */}
+            <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
           </Route>
 
           <Route

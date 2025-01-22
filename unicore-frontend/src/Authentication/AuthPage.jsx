@@ -95,34 +95,53 @@ const AuthPage = () => {
 
     const handleGoogleLogin = async () => {
         try {
-          const result = await signInWithPopup(auth, provider);
-          const user = result.user;
-      
-          // Fetch user details from Google login
-          const userData = {
-            email: user.email,
-            role: user.email === "akhileshadam186@gmail.com"
-              ? "admin"
-              : user.email === "balajikokkul13@gmail.com"
-              ? "faculty"
-              : "student",
-            displayName: user.displayName || "", // Ensure displayName is set
-          };
-      
-          // Store user data using the login function from AuthContext
-          login(userData);
-      
-          // Redirect user based on role
-          if (userData.role === "admin") navigate("/admin-library");
-          else if (userData.role === "faculty") navigate("/faculty-dashboard");
-          else navigate("/");
-      
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+    
+            // Fetch user details from Google login
+            const userData = {
+                email: user.email,
+                role: user.email === "akhileshadam186@gmail.com"
+                    ? "admin"
+                    : user.email === "balajikokkul13@gmail.com"
+                    ? "faculty"
+                    : user.email === "sanjukanaki@gmail.com"
+                    ? "faculty"
+                    : user.email === "matetisantosh37@gmail.com"
+                    ? "faculty"
+                    : "student",
+                displayName: user.displayName || "", // Ensure displayName is set
+                uid: user.uid, // Get user's UID from Firebase Auth
+            };
+    
+            // Check if the user already exists in Firestore
+            const userQuery = query(collection(db, "users"), where("uid", "==", userData.uid));
+            const userSnapshot = await getDocs(userQuery);
+    
+            if (userSnapshot.empty) {
+                // Add new user to Firestore if not already present
+                await addDoc(collection(db, "users"), {
+                    uid: userData.uid,
+                    email: userData.email,
+                    displayName: userData.displayName,
+                    role: userData.role,
+                });
+            }
+    
+            // Store user data using the login function from AuthContext
+            login(userData);
+    
+            // Redirect user based on role
+            if (userData.role === "admin") navigate("/admin-library");
+            else if (userData.role === "faculty") navigate("/faculty-dashboard");
+            else navigate("/");
         } catch (error) {
-          setModalMessage(`Google sign-in failed: ${error.message}`);
-          console.error("Google sign-in error:", error);
-          setShowModal(true);
+            setModalMessage(`Google sign-in failed: ${error.message}`);
+            console.error("Google sign-in error:", error);
+            setShowModal(true);
         }
-      };       
+    };
+       
 
     const closeModal = () => {
         setShowModal(false);
