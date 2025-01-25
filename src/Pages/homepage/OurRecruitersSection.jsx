@@ -96,9 +96,9 @@ const RecruitersSection = () => {
     };
 
     return (
-        <>
+        <div id='partners'>
             <SlidingSection text={"Our Recruiters"} />
-            <section className="recruiters-section">
+            <section className="recruiters-section" >
                 <div className="recruiters-section-logos-container">
                     <div className="recruiters-section-logo-row">
                         {images.map((image, index) => (
@@ -118,7 +118,7 @@ const RecruitersSection = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 

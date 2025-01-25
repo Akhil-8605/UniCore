@@ -38,12 +38,12 @@ const Header = ({ setWhenAppears, setWhenDisappears }) => {
                 <nav className={`header-section-nav ${isMenuOpen ? 'header-section-nav-open' : ''}`}>
                     <ul className="header-section-nav-items">
                         <li><a href="/">Home</a></li>
-                        <li><a href="#departments">Departments</a></li>
-                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="/departments">Departments</a></li>
+                        <li><a href="/admissions">Admissions</a></li>
                         <li><a href="/#events">Events</a></li>
-                        <li><a href="#student-portal">Student Portal</a></li>
+                        <li><a href="/student-portal">Student Portal</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="#about-us">About us</a></li>
+                        <li><a href="/about-us">About us</a></li>
                         {isLoggedIn ? (
                             <button 
                                 onClick={handleLogout} 

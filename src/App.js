@@ -12,8 +12,11 @@ import QuestionPapers from "./Pages/academics/QuestionPapersPage";
 import ClassTestResults from "./Pages/academics/ClassTestResultsPage";
 import PrivateRoute from "./Authentication/PrivateRoute";
 import { AuthProvider } from "./Authentication/AuthProvider";
-// import FacultyDashboard from "./Pages/FacultyDashboard"; // New Faculty Page
-
+import Dashboard from "./Student/Dashboard";
+import DepartmentsPage from "./Pages/DepartmentsPage";
+import StudentLibraryPage from "./Student/LibraryPage"
+import Schedule from "./Student/Schedule";
+import ProfilePage from "./Student/Profile";
 function App() {
   return (
     <AuthProvider>
@@ -25,6 +28,14 @@ function App() {
 
           <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
             <Route path="/admin-library" element={<AdminLibrary />} />
+          </Route>
+
+          <Route element={<PrivateRoute allowedRoles={["student"]} />}>
+          
+            <Route path="/student-portal" element={<Dashboard />} />
+            <Route path="/student-portal/schedule" element={<Schedule />} />
+            <Route path="/student-portal/library" element={<StudentLibraryPage />} />
+            <Route path="/student-portal/profile" element={<ProfilePage />} />
           </Route>
 
           <Route element={<PrivateRoute allowedRoles={["student", "admin"]} />}>
@@ -40,18 +51,7 @@ function App() {
               path="/academics/class-test-results"
               element={<ClassTestResults />}
             />
-          </Route>
-
-          <Route element={<PrivateRoute allowedRoles={["faculty"]} />}>
-            {/* <Route path="/faculty-dashboard" element={<FacultyDashboard />} /> */}
-          </Route>
-
-          <Route
-            element={
-              <PrivateRoute allowedRoles={["student", "admin", "faculty"]} />
-            }
-          >
-            
+            <Route path="/departments" element={<DepartmentsPage />} />
           </Route>
         </Routes>
       </Router>
