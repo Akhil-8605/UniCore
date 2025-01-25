@@ -1,3 +1,8 @@
+:root{
+  --primary-color: #007bff;
+  --secondary-color: #ffffff;
+}
+
 html{
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -6,4 +11,9 @@ html{
 
 body{
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }

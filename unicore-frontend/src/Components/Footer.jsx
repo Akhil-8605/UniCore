@@ -37,35 +37,36 @@ function Footer() {
 
                     <div className="footer-section-footer-links">
                         <div className="footer-section-links-column">
-                            <h3>Platform</h3>
+                            <h3>Academics</h3>
                             <ul>
-                                <li><a href="#" className="footer-section-hover-effect">Features</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Security</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Integrations</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Enterprise</a></li>
+                                <li><a href="/programs" className="footer-section-hover-effect">Programs</a></li>
+                                <li><a href="/admissions" className="footer-section-hover-effect">Admissions</a></li>
+                                <li><a href="/departments" className="footer-section-hover-effect">Departments</a></li>
+                                <li><a href="/academic-calendar" className="footer-section-hover-effect">Academic Calendar</a></li>
                             </ul>
                         </div>
 
                         <div className="footer-section-links-column">
                             <h3>Resources</h3>
                             <ul>
-                                <li><a href="#" className="footer-section-hover-effect">Documentation</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Tutorials</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Blog</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Support</a></li>
+                                <li><a href="/library" className="footer-section-hover-effect">Library</a></li>
+                                <li><a href="/research" className="footer-section-hover-effect">Research</a></li>
+                                <li><a href="/student-portal" className="footer-section-hover-effect">Student Portal</a></li>
+                                <li><a href="/helpdesk" className="footer-section-hover-effect">Helpdesk</a></li>
                             </ul>
                         </div>
 
                         <div className="footer-section-links-column">
-                            <h3>Company</h3>
+                            <h3>About UniCore</h3>
                             <ul>
-                                <li><a href="#" className="footer-section-hover-effect">About</a></li>
-                                <li><a href="#" className="footer-section-hover-effect">Careers</a></li>
-                                <li><a href="/#partners" className="footer-section-hover-effect">Partners</a></li>
-                                <li><a href="/contact" className="footer-section-hover-effect">Contact</a></li>
+                                <li><a href="/about" className="footer-section-hover-effect">About Us</a></li>
+                                <li><a href="/careers" className="footer-section-hover-effect">Careers</a></li>
+                                <li><a href="/#partners" className="footer-section-hover-effect">Our Partners</a></li>
+                                <li><a href="/contact" className="footer-section-hover-effect">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
+
                 </div>
 
                 <div className="footer-section-footer-bottom">

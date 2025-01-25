@@ -22,9 +22,7 @@ const AuthPage = () => {
     // Function to check email and assign roles automatically
     const assignRoleBasedOnEmail = (user) => {
         let role = "student"; // Default role
-        if (user.email === "faculty@gmail.com") {
-            role = "faculty";
-        } else if (user.email === "admin@gmail.com") {
+        if (user.email === "admin@gmail.com") {
             role = "admin";
         }
         return role;
@@ -36,17 +34,14 @@ const AuthPage = () => {
         // Hardcoded login functionality
         if (
             (username === "Student@gmail.com" && password === "Student@1") ||
-            (username === "Faculty@gmail.com" && password === "Faculty@1") ||
             (username === "Admin@gmail.com" && password === "Admin@1")
         ) {
             let role = "student";
-            if (username === "Faculty@gmail.com") role = "faculty";
             if (username === "Admin@gmail.com") role = "admin";
 
             login(username, role);
 
             if (role === "admin") navigate("/admin-dashboard");
-            else if (role === "faculty") navigate("/faculty-dashboard");
             else navigate("/");
 
             return;
@@ -97,27 +92,29 @@ const AuthPage = () => {
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
-    
+
             // Fetch user details from Google login
             const userData = {
                 email: user.email,
                 role: user.email === "akhileshadam186@gmail.com"
                     ? "admin"
-                    : user.email === "balajikokkul13@gmail.com"
-                    ? "faculty"
-                    : user.email === "sanjukanaki@gmail.com"
-                    ? "faculty"
-                    : user.email === "matetisantosh37@gmail.com"
-                    ? "faculty"
-                    : "student",
+                    : user.email === "onkarsakv99@gmail.com"
+                        ? "admin"
+                        : user.email === "balajikokkul13@gmail.com"
+                            ? "student"
+                            : user.email === "sanjukanaki@gmail.com"
+                                ? "student"
+                                : user.email === "matetisantosh37@gmail.com"
+                                    ? "student"
+                                    : "student",
                 displayName: user.displayName || "", // Ensure displayName is set
                 uid: user.uid, // Get user's UID from Firebase Auth
             };
-    
+
             // Check if the user already exists in Firestore
             const userQuery = query(collection(db, "users"), where("uid", "==", userData.uid));
             const userSnapshot = await getDocs(userQuery);
-    
+
             if (userSnapshot.empty) {
                 // Add new user to Firestore if not already present
                 await addDoc(collection(db, "users"), {
@@ -127,13 +124,12 @@ const AuthPage = () => {
                     role: userData.role,
                 });
             }
-    
+
             // Store user data using the login function from AuthContext
             login(userData);
-    
+
             // Redirect user based on role
             if (userData.role === "admin") navigate("/admin-library");
-            else if (userData.role === "faculty") navigate("/faculty-dashboard");
             else navigate("/");
         } catch (error) {
             setModalMessage(`Google sign-in failed: ${error.message}`);
@@ -141,7 +137,7 @@ const AuthPage = () => {
             setShowModal(true);
         }
     };
-       
+
 
     const closeModal = () => {
         setShowModal(false);

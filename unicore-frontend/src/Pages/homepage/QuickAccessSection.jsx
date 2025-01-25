@@ -16,7 +16,7 @@ const quickLinks = [
         title: 'Student Portal',
         icon: UserCheck,
         description: 'View grades, attendance, and academic progress',
-        link: '#'
+        link: '/student-portal'
     },
     {
         title: 'Academics',
