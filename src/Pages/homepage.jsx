@@ -9,6 +9,10 @@ import UpcomingEventsSection from './homepage/UpcomingEventsSection';
 import QuickAccess from './homepage/QuickAccessSection';
 import HiUser from './homepage/HiUser';
 import { useLocation } from 'react-router-dom';
+import ImageGallery from './homepage/ImageGallery';
+import AboutSection from './homepage/AboutSection';
+import VideoTour from './homepage/VideoTour';
+import CoursesSection from './homepage/CoursesSection';
 
 const Homepage = () => { // Ensure the component starts with an uppercase letter
   const location = useLocation(); // useLocation must be inside the component
@@ -27,9 +31,13 @@ const Homepage = () => { // Ensure the component starts with an uppercase letter
       <Header setWhenAppears={700} setWhenDisappears={0} />
       <HeroSection />
       <HiUser />
+      <ImageGallery />
+      <AboutSection />
       <QuickAccess />
       <UpcomingEventsSection />
+      <CoursesSection/>
       <OurRecruiters />
+      <VideoTour />
       <LoginNow />
       <Footer />
     </>

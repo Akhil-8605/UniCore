@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import { Calendar, Bell, GraduationCap, MapPin, Clock, ChevronRight, Sparkles } from 'lucide-react'
 import './UpcomingEventsSection.css'

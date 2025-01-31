@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { ArrowLeft, Download, Search, Filter, ChevronDown, BarChart2, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';

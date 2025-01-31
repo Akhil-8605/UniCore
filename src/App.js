@@ -14,9 +14,15 @@ import PrivateRoute from "./Authentication/PrivateRoute";
 import { AuthProvider } from "./Authentication/AuthProvider";
 import Dashboard from "./Student/Dashboard";
 import DepartmentsPage from "./Pages/DepartmentsPage";
-import StudentLibraryPage from "./Student/LibraryPage"
-import Schedule from "./Student/Schedule";
+import StudentLibraryPage from "./Student/LibraryPage";
 import ProfilePage from "./Student/Profile";
+import AttendancePage from "./Student/Attendance";
+import ExamPortalPage from "./Student/Exams";
+import CertificatesPage from "./Student/Certificates";
+import Assignments from "./Student/Assignments";
+import Schedules from "./Student/Schedule";
+import SamplePage from "./Pages/Sample";
+import CoursePage from "./Pages/CoursePage";
 function App() {
   return (
     <AuthProvider>
@@ -25,17 +31,34 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<AuthPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/sample" element={<SamplePage />} />
+          <Route path="/courses/:courseId" element={<CoursePage />} />
 
           <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
             <Route path="/admin-library" element={<AdminLibrary />} />
           </Route>
 
           <Route element={<PrivateRoute allowedRoles={["student"]} />}>
-          
             <Route path="/student-portal" element={<Dashboard />} />
-            <Route path="/student-portal/schedule" element={<Schedule />} />
-            <Route path="/student-portal/library" element={<StudentLibraryPage />} />
+            <Route path="/student-portal/schedule" element={<Schedules />} />
+            <Route
+              path="/student-portal/library"
+              element={<StudentLibraryPage />}
+            />
             <Route path="/student-portal/profile" element={<ProfilePage />} />
+            <Route
+              path="/student-portal/attendance"
+              element={<AttendancePage />}
+            />
+            <Route path="/student-portal/exams" element={<ExamPortalPage />} />
+            <Route
+              path="/student-portal/certificates"
+              element={<CertificatesPage />}
+            />
+            <Route
+              path="/student-portal/assignments"
+              element={<Assignments />}
+            />
           </Route>
 
           <Route element={<PrivateRoute allowedRoles={["student", "admin"]} />}>

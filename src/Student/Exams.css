@@ -1,0 +1,365 @@
+.exam-portal-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.exam-portal-main {
+  flex-grow: 1;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.exam-portal-header {
+  position: relative;
+  width: 100%;
+  margin: 0 -3.5rem;
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 2rem;
+  border-left: 1px solid #e9ecef;
+  z-index: 100;
+}
+
+.exam-portal-header-left h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.exam-portal-header-center {
+  flex-grow: 1;
+ 
+  margin-right: 5rem;
+}
+
+.exam-portal-search-bar {
+  position: relative;
+}
+
+.exam-portal-search-bar input {
+  width: 98%;
+  padding: .9rem 2.6rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.exam-portal-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.exam-portal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exam-portal-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  transition: color 0.3s;
+  padding-right: 1rem;
+}
+
+.exam-portal-icon-button:hover {
+  color: #007bff;
+}
+
+.exam-portal-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.exam-portal-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+}
+
+.exam-portal-exam-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.exam-portal-exam-list-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.exam-portal-view-all-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.exam-portal-view-all-button:hover {
+  color: #1d4ed8;
+}
+
+.exam-portal-exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.exam-portal-exam-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+  border: 1.5px solid lightgrey;
+}
+
+.exam-portal-exam-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exam-portal-exam-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.exam-portal-subject-icon {
+  color: #007bff;
+}
+
+.exam-portal-exam-status {
+  display: inline-block;
+  background-color: #eab308;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.exam-portal-exam-card h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.exam-portal-exam-code {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+}
+
+.exam-portal-exam-details {
+  margin: 1rem 0;
+}
+
+.exam-portal-exam-details p {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.exam-portal-exam-details .exam-portal-icon {
+  margin-right: .5rem;
+  color: #007bff;
+}
+
+.exam-portal-exam-action-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.exam-portal-exam-action-button:hover {
+  background-color: #1d4ed8;
+}
+
+.exam-portal-exam-notice {
+  margin-top: 1.5rem;
+  background-color: #fef3c7;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.exam-portal-notice-icon {
+  color: #d97706;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.exam-portal-exam-notice p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #92400e;
+}
+
+/* Modal styles */
+.exam-portal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.exam-portal-modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.exam-portal-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  transition: color 0.3s;
+}
+
+.exam-portal-modal-close:hover {
+  color: #007bff;
+}
+
+.exam-portal-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.exam-portal-exam-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.exam-portal-info-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.exam-portal-info-icon {
+  margin-right: 0.5rem;
+  color: #007bff;
+}
+
+.exam-portal-exam-status-large {
+  display: inline-block;
+  background-color: #eab308;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.exam-portal-exam-instructions {
+  margin-top: 1.5rem;
+}
+
+.exam-portal-exam-instructions h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.exam-portal-section-icon {
+  margin-right: 0.5rem;
+  color: #007bff;
+}
+
+.exam-portal-exam-instructions ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.exam-portal-exam-instructions li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #1e293b;
+}
+
+.exam-portal-exam-instructions li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .exam-portal-exam-portal-container {
+    flex-direction: column;
+  }
+
+  .exam-portal-main {
+    padding: 1rem;
+    padding-top: calc(64px + 1rem);
+  }
+
+  .exam-portal-header {
+    left: 0;
+    padding: 0 1rem;
+  }
+
+  .exam-portal-header-center {
+    display: none;
+  }
+
+  .exam-portal-exam-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
+import sampleImg from "../../Images/computer engg.png"
 /**
  * @typedef {Object} Book
  * @property {string} id
@@ -29,26 +29,36 @@ export const useBookStore = create()(
       books: [
         {
           id: "1",
-          title: "The Design of Everyday Things",
-          author: "Don Norman",
-          category: "Design",
-          publishedYear: 2013,
-          copies: 5,
-          available: 3,
-          description:
-            "A powerful primer on how good design can help us understand and improve the world around us.",
-          price: 29.99,
+          title: "Data Structures Using C",
+          author: "MSBTE",
+          category: "Computer Engineering",
+          publishedYear: 2018,
+          copies: 8,
+          available: 5,
+          description: "Detailed exploration of data structures and algorithms using the C programming language.",
+          price: 450.00,
         },
         {
           id: "2",
-          title: "Clean Code",
-          author: "Robert C. Martin",
-          category: "Programming",
-          publishedYear: 2008,
-          copies: 3,
-          available: 1,
-          description: "A handbook of agile software craftsmanship.",
-          price: 34.99,
+          title: "Python Programming",
+          author: "MSBTE",
+          category: "Computer Engineering",
+          publishedYear: 2019,
+          copies: 12,
+          available: 9,
+          description: "A comprehensive guide to Python programming for MSBTE diploma students.",
+          price: 599.00,
+        },
+        {
+          id: "3",
+          title: "HTML, CSS, and JavaScript",
+          author: "MSBTE",
+          category: "Computer Engineering",
+          publishedYear: 2018,
+          copies: 10,
+          available: 6,
+          description: "An in-depth study of web development techniques using HTML, CSS, and JavaScript.",
+          price: 499.00,
         },
       ],
 

@@ -1,0 +1,101 @@
+/* Container Styling */
+.assignments-page-container {
+  display: flex;
+}
+
+/* Main Content */
+.assignments-page-content {
+  flex: 1;
+  padding: 30px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.assignments-page-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.assignments-page-page-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Department Select */
+.assignments-page-department-select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.assignments-page-department-select:hover {
+  border-color: #2980b9;
+}
+
+/* Breadcrumb */
+.assignments-page-breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.assignments-page-icon {
+  width: 18px;
+  height: 18px;
+  margin: 0 6px;
+  color: #2980b9;
+}
+
+/* Assignments List */
+.assignments-page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Assignment Card */
+.assignments-page-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1.5px solid lightgrey;
+}
+
+.assignments-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assignments-page-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.assignments-page-subject {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.assignments-page-due {
+  font-size: 14px;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Assignment Details */
+.assignments-page-details {
+  font-size: 14px;
+  color: #2c3e50;
+  margin: 10px 0;
+  line-height: 1.4;
+}

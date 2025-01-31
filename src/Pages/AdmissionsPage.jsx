@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 import {GraduationCap, FileText, BookOpen, Gavel, DollarSign, CheckCircle, Award, Home, Menu, X ,StepForward, LogOut, ClipboardCheck, IndianRupee, Scale} from 'lucide-react';
 import MainHeader from "../Components/MainHeader"

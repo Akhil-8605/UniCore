@@ -84,6 +84,10 @@ export default function AcademicCalendar() {
     const monthStart = startOfMonth(currentDate);
     const monthEnd = endOfMonth(currentDate);
     const daysInMonth = eachDayOfInterval({ start: monthStart, end: monthEnd });
+    const startDayOfWeek = monthStart.getDay(); // Get the starting day of the week (0 for Sunday, 1 for Monday, etc.)
+
+    // Add blank spaces for the days before the start of the month
+    const blanks = Array(startDayOfWeek).fill(null); // Create an array with the number of blanks before the 1st of the month
 
     // Date functions for week view
     const weekStart = startOfWeek(currentDate, { weekStartsOn: 0 });
@@ -173,7 +177,7 @@ export default function AcademicCalendar() {
                         >
                             <option value="month">Month View</option>
                             <option value="week">Week View</option>
-                            <option value="day">Day View</option>
+                            {/* <option value="day">Day View</option> */}
                         </select>
 
                         <div className="academic-calendar-navigation">
@@ -225,35 +229,114 @@ export default function AcademicCalendar() {
                     </div>
 
                     <div className="academic-calendar-dates">
-                        {(view === 'month' ? daysInMonth : view === 'week' ? daysInWeek : daysInDay).map((date) => {
-                            const dayEvents = getEventsForDate(date);
-                            const isSelected = selectedDate && isSameDay(date, selectedDate);
-                            const isToday = isSameDay(date, new Date());
+                        {view === 'month' && (
+                            <>
+                                {/* Render the blanks first */}
+                                {blanks.map((_, index) => (
+                                    <div key={index} className="academic-calendar-date blank-date"></div>
+                                ))}
+                                {/* Render the actual days */}
+                                {daysInMonth.map((date) => {
+                                    const dayEvents = getEventsForDate(date);
+                                    const isSelected = selectedDate && isSameDay(date, selectedDate);
+                                    const isToday = isSameDay(date, new Date());
 
-                            return (
-                                <div
-                                    key={date.toString()}
-                                    className={`academic-calendar-date ${!isSameMonth(date, currentDate) ? 'other-month' : ''} ${isSelected ? 'selected' : ''} ${isToday ? 'today' : ''}`}
-                                    onClick={() => handleDateClick(date)}
-                                >
-                                    <span className="academic-calendar-date-number">{format(date, 'd')}</span>
-                                    {dayEvents.length > 0 && (
-                                        <div className="academic-calendar-event-indicators">
-                                            {dayEvents.map(event => (
-                                                <button
-                                                    key={event.id}
-                                                    className="academic-calendar-event-indicator"
-                                                    style={{ backgroundColor: eventTypes[event.type].color }}
-                                                    onClick={(e) => handleEventClick(event, e)}
-                                                >
-                                                    {event.title}
-                                                </button>
-                                            ))}
+                                    return (
+                                        <div
+                                            key={date.toString()}
+                                            className={`academic-calendar-date ${!isSameMonth(date, currentDate) ? 'other-month' : ''} ${isSelected ? 'selected' : ''} ${isToday ? 'today' : ''}`}
+                                            onClick={() => handleDateClick(date)}
+                                        >
+                                            <span className="academic-calendar-date-number">{format(date, 'd')}</span>
+                                            {dayEvents.length > 0 && (
+                                                <div className="academic-calendar-event-indicators">
+                                                    {dayEvents.map(event => (
+                                                        <button
+                                                            key={event.id}
+                                                            className="academic-calendar-event-indicator"
+                                                            style={{ backgroundColor: eventTypes[event.type].color }}
+                                                            onClick={(e) => handleEventClick(event, e)}
+                                                        >
+                                                            {event.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
                                         </div>
-                                    )}
-                                </div>
-                            );
-                        })}
+                                    );
+                                })}
+                            </>
+                        )}
+
+                        {view === 'week' && (
+                            <>
+                                {/* Render the actual days of the week */}
+                                {daysInWeek.map((date) => {
+                                    const dayEvents = getEventsForDate(date);
+                                    const isSelected = selectedDate && isSameDay(date, selectedDate);
+                                    const isToday = isSameDay(date, new Date());
+
+                                    return (
+                                        <div
+                                            key={date.toString()}
+                                            className={`academic-calendar-date ${isSelected ? 'selected' : ''} ${isToday ? 'today' : ''}`}
+                                            onClick={() => handleDateClick(date)}
+                                        >
+                                            <span className="academic-calendar-date-number">{format(date, 'd')}</span>
+                                            {dayEvents.length > 0 && (
+                                                <div className="academic-calendar-event-indicators">
+                                                    {dayEvents.map(event => (
+                                                        <button
+                                                            key={event.id}
+                                                            className="academic-calendar-event-indicator"
+                                                            style={{ backgroundColor: eventTypes[event.type].color }}
+                                                            onClick={(e) => handleEventClick(event, e)}
+                                                        >
+                                                            {event.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </>
+                        )}
+
+                        {view === 'day' && (
+                            <>
+                                {/* Render the single day */}
+                                {daysInDay.map((date) => {
+                                    const dayEvents = getEventsForDate(date);
+                                    const isSelected = selectedDate && isSameDay(date, selectedDate);
+                                    const isToday = isSameDay(date, new Date());
+
+                                    return (
+                                        <div
+                                            key={date.toString()}
+                                            className={`academic-calendar-date ${isSelected ? 'selected' : ''} ${isToday ? 'today' : ''}`}
+                                            onClick={() => handleDateClick(date)}
+                                        >
+                                            <span className="academic-calendar-date-number">{format(date, 'd')}</span>
+                                            {dayEvents.length > 0 && (
+                                                <div className="academic-calendar-event-indicators">
+                                                    {dayEvents.map(event => (
+                                                        <button
+                                                            key={event.id}
+                                                            className="academic-calendar-event-indicator"
+                                                            style={{ backgroundColor: eventTypes[event.type].color }}
+                                                            onClick={(e) => handleEventClick(event, e)}
+                                                        >
+                                                            {event.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </>
+                        )}
                     </div>
                 </div>
 

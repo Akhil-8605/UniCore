@@ -27,12 +27,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 1.5rem 2rem; /* Add more padding for a cleaner layout */
   background: white;
   border-radius: 1rem; /* Increased border radius for a smoother look */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
-  border: 1px solid rgba(0, 74, 173, 0.12); /* Lighter border to match theme */
+  border: 1px solid lightgray; /* Lighter border to match theme */
   transition: all 0.3s ease;
 }
 
@@ -74,13 +73,12 @@
 .events-section-category-filters {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
   padding: 0.75rem;
   background: white;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(0, 74, 173, 0.12); /* Matching border */
+  /* border: 1px solid lightgrey; */
   transition: all 0.3s ease;
 }
 

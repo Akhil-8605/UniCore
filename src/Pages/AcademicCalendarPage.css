@@ -105,7 +105,8 @@
 
 .academic-calendar-day-header {
   padding: 0.5rem;
-  text-align: center;
+  padding-left: 2rem;
+  text-align: start;
   font-size: 0.75rem;
   font-weight: bold;
 }

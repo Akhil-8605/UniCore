@@ -1,0 +1,116 @@
+.courses-section {
+  padding: 4rem 0;
+  padding-top: 0;
+  /* margin-top: 3rem; */
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.courses-section-courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.courses-section-courses-title {
+  color: #007bff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.courses-section-courses-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+.courses-section-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.courses-section-course-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1.5px solid lightgrey;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.courses-section-course-card:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 8px 30px rgba(0, 123, 255, 0.15); */
+}
+
+.courses-section-course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.courses-section-course-content {
+  padding: 1.5rem;
+}
+
+.courses-section-course-name {
+  color: #007bff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.courses-section-course-description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.courses-section-read-more {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.courses-section-read-more:hover {
+  color: #0056b3;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .courses-section-courses-section {
+    padding: 3rem 0;
+  }
+
+  .courses-section-courses-container {
+    padding: 0 1.5rem;
+  }
+
+  .courses-section-courses-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .courses-section-courses-grid {
+    grid-template-columns: 1fr;
+  }
+}

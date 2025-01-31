@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { BookOpen, Calendar, FileText, GraduationCap, Users, Library, Mail, Clock, ChevronRight, BarChart2, BookMarked, UserCheck, icons } from 'lucide-react';
 import './QuickAccessSection.css';
