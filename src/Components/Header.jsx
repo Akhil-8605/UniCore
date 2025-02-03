@@ -66,7 +66,7 @@ const Header = ({ setWhenAppears, setWhenDisappears }) => {
                         {!isLoggedIn ? '' :
                             (<>
                                 {JSON.parse(user).role == "admin" ?
-                                    <li><a href="/admin-library">Admin Panel</a></li>
+                                    <li><a href="/admin">Admin Panel</a></li>
                                     :
                                     <li><a href="/student-portal">Student Portal</a></li>
                                 }

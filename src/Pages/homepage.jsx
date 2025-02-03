@@ -5,7 +5,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import OurRecruiters from './homepage/OurRecruitersSection';
 import LoginNow from './homepage/LoginNowSection';
-import UpcomingEventsSection from './homepage/UpcomingEventsSection';
+import UpcomingEventsSection from './homepage/EventsSection';
 import QuickAccess from './homepage/QuickAccessSection';
 import HiUser from './homepage/HiUser';
 import { useLocation } from 'react-router-dom';

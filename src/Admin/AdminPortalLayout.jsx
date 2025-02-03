@@ -20,6 +20,7 @@ import {
     Book,
     LayoutDashboardIcon,
     Users,
+    Image,
 } from "lucide-react";
 import "../Student/StudentPortalLayout.css";
 
@@ -29,12 +30,12 @@ export default function AdminPortalLayout({ children }) {
 
     const navigation = {
         main: [
-            { name: "Admin Dashboard", href: "/admin-dashboard", icon: LayoutDashboardIcon },
+            { name: "Admin Dashboard", href: "/admin", icon: LayoutDashboardIcon },
+            { name: "Image Gallery", href: "/admin-gallery", icon: Image },
             { name: "Library", href: "/admin-library", icon: Library },
             { name: "Events", href: "/admin-events", icon: Calendar },
-            { name: "Attendance", href: "/student-portal/attendance", icon: Clock },
-            { name: "Assignments", href: "/student-portal/assignments", icon: FileText },
-            { name: "Students", href: "/student-portal/attendance", icon: Users },
+            { name: "Attendance", href: "/admin-attendance", icon: Clock },
+            { name: "Students", href: "/admin-students", icon: Users },
             { name: "Back to Home", href: "/", icon: LogOut },
         ],
     };

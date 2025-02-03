@@ -4,7 +4,7 @@ import Homepage from "./Pages/homepage";
 import AuthPage from "./Authentication/AuthPage";
 import ContactPage from "./Pages/contactpage";
 import LibraryPage from "./Pages/library-management/LibraryPage";
-import AdminLibrary from "./Pages/library-management/admin-library";
+import AdminLibrary from "./Admin/AdminLibrary";
 import AcademicCalendar from "./Pages/AcademicCalendarPage";
 import Admissions from "./Pages/AdmissionsPage";
 import Academics from "./Pages/academics/AcademicsPage";
@@ -23,6 +23,10 @@ import Assignments from "./Student/Assignments";
 import Schedules from "./Student/Schedule";
 import SamplePage from "./Pages/Sample";
 import CoursePage from "./Pages/CoursePage";
+import Error from "./Authentication/Error";
+import AdminImageGallery from "./Admin/AdminImageGallery";
+import AdminEvents from "./Admin/AdminEvents"
+import AdminDashboard from "./Admin/AdminDashboard"
 function App() {
   return (
     <AuthProvider>
@@ -33,9 +37,13 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/sample" element={<SamplePage />} />
           <Route path="/courses/:courseId" element={<CoursePage />} />
+          <Route path="*" element={<Error />} />
 
           <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
+            <Route path="/admin" element={<AdminDashboard/>}/>
             <Route path="/admin-library" element={<AdminLibrary />} />
+            <Route path="/admin-gallery" element={<AdminImageGallery />} />
+            <Route path="/admin-events" element={<AdminEvents />} />
           </Route>
 
           <Route element={<PrivateRoute allowedRoles={["student"]} />}>

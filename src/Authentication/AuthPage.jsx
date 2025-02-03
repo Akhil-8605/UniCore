@@ -41,7 +41,7 @@ const AuthPage = () => {
 
             login(username, role);
 
-            if (role === "admin") navigate("/admin-dashboard");
+            if (role === "admin") navigate("/admin");
             else navigate("/");
 
             return;
@@ -129,7 +129,7 @@ const AuthPage = () => {
             login(userData);
 
             // Redirect user based on role
-            if (userData.role === "admin") navigate("/admin-library");
+            if (userData.role === "admin") navigate("/admin");
             else navigate("/");
         } catch (error) {
             setModalMessage(`Google sign-in failed: ${error.message}`);

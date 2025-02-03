@@ -1,0 +1,302 @@
+.admin-image-container {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.admin-image-card {
+  background: white;
+  border-radius: 8px;
+  border: 1.5px solid lightgrey;
+  transition: all 0.3s ease;
+}
+
+.admin-image-card-header {
+  padding: 1.5rem;
+  border-bottom: 1.5px solid lightgrey;
+  margin-bottom: 0;
+}
+
+.admin-image-card-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  color: #007bff;
+}
+
+.admin-image-card-header p {
+  color: #666;
+  margin: 0;
+}
+
+.admin-image-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid lightgrey;
+}
+
+.admin-image-tab {
+  padding: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+}
+
+.admin-image-tab.active {
+  color: #000;
+  border-bottom: 2px solid #007bff;
+}
+
+.admin-image-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.admin-image-gallery-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-image-image-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  height: 200px;
+}
+
+.admin-image-image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-image-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.admin-image-gallery-item:hover .admin-image-image-overlay {
+  opacity: 1;
+}
+
+.admin-image-edit-button,
+.admin-image-delete-button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-image-edit-button {
+  background: white;
+  color: #000;
+}
+
+.admin-image-delete-button {
+  background: #dc2626;
+  color: white;
+}
+
+.admin-image-image-info {
+  padding: 1rem;
+}
+
+.admin-image-image-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.admin-image-image-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.875rem;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.admin-image-upload-form {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-image-form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.admin-image-form-group label {
+  font-weight: 500;
+}
+
+.admin-image-upload-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-image-preview-container {
+  aspect-ratio: 16 / 9;
+  min-width: 100vh;
+  min-height: 100%;
+  max-width: 100vh;
+  max-height: 100%;
+  margin: 0 auto;
+  background: #f3f4f6;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-image-preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-image-upload-placeholder {
+  color: #9ca3af;
+}
+
+.admin-image-form-group input[type="text"],
+.admin-image-form-group input[type="file"],
+.admin-image-form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.admin-image-form-group input:focus {
+  border: #007bff;
+}
+
+.admin-image-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-image-submit-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.admin-image-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.admin-image-modal {
+  background: white;
+  border-radius: 29px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 10000;
+}
+
+.admin-image-modal-header {
+  margin: -1rem;
+  margin-bottom: 0;
+  padding: 1rem 2rem;
+  padding-top: 1.5rem;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-image-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.admin-image-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.admin-image-edit-form {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-image-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.admin-image-cancel-button,
+.admin-image-save-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.admin-image-cancel-button {
+  background: none;
+  border: 1px solid #ddd;
+}
+
+.admin-image-save-button {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-image-admin-container {
+    margin: 1rem auto;
+  }
+
+  .admin-image-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-image-modal {
+    margin: 1rem;
+  }
+}
